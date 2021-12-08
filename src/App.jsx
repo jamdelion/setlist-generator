@@ -34,10 +34,20 @@ function App() {
             changeFunction={setBangersOnly}
           />
         </form>
-        <section>
-          <h2>Set List</h2>
-          <SetList />
-        </section>
+        <button onClick={() => setGenerated(true)}>Generate Setlist </button>
+
+        {generated && (
+          <section>
+            <h2>Set List</h2>
+            <SetList
+              numSets={numSets}
+              gigLength={gigLength}
+              vibe={vibe}
+              famFriendly={famFriendly}
+              bangersOnly={bangersOnly}
+            />
+          </section>
+        )}
       </header>
     </div>
   );
