@@ -35,6 +35,7 @@ function App() {
           />
         </form>
         <button onClick={() => setGenerated(true)}>Generate Setlist </button>
+        {/* TODO: reset generated to false when another value changed */}
 
         {generated && (
           <section>

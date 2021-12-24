@@ -1,4 +1,4 @@
-const songs = {
+export const songs = {
   "Put You Records On": {
     length: 3,
     vocals: true,
