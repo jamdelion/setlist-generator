@@ -11,16 +11,14 @@ export default function SetList(props) {
 
   // random selection of songs
   let songList = Object.keys(songs);
-  let randomSetList = sampleSize(songList, numSongs);
-
-  const songItems = randomSetList.map((song) => <li key={song}>{song}</li>);
 
   function createSetlists(n) {
-    var elements = [];
+    var setlists = [];
     for (let i = 1; i <= n; i++) {
-      elements.push(i);
+      let randomSongs = sampleSize(songList, numSongs / props.numSets)
+      setlists.push({set: i, songs: randomSongs});
     }
-    return elements;
+    return setlists;
   }
 
   let setlists = createSetlists(props.numSets);
@@ -29,11 +27,11 @@ export default function SetList(props) {
     <div>
       {setlists.map((x) => (
         <>
-          <h1>Set {x}</h1>
-          <ol>{songItems}</ol>
-          {/* TODO: songs need to be divided between sets */}
+          <h1>Set {x.set}</h1>
+          <ol>{x.songs.map((song) => <li key={song}>{song}</li>)}</ol>
         </>
       ))}
     </div>
   );
+
 }
