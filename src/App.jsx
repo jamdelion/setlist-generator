@@ -8,6 +8,7 @@ import FriendlySlider from "./components/FriendlySlider";
 import KnownTunesFilter from "./components/KnownTunesFilter";
 import SetList from "./components/SetList";
 import VibeFilter from "./components/VibeFilter";
+import EraFilter from "./components/EraFilter";
 
 function App() {
   const [numSets, setNumSets] = React.useState(2);
@@ -16,8 +17,9 @@ function App() {
   const [famFriendly, setFamFriendly] = React.useState(3); // out of 5
   const [bangersOnly, setBangersOnly] = React.useState(1); // out of 5
   const [generated, setGenerated] = React.useState(false);
+  const [era, setEra] = React.useState('90s');
 
-  console.log(numSets, gigLength, vibe, famFriendly, bangersOnly);
+  console.log(numSets, gigLength, vibe, famFriendly, bangersOnly, era);
 
   return (
     <div className='App'>
@@ -33,6 +35,7 @@ function App() {
             value={bangersOnly}
             changeFunction={setBangersOnly}
           />
+          <EraFilter value={era} changeFunction={setEra} />
         </form>
         <button onClick={() => setGenerated(true)}>Generate Setlist </button>
         {/* TODO: reset generated to false when another value changed */}
@@ -46,6 +49,7 @@ function App() {
               vibe={vibe}
               famFriendly={famFriendly}
               bangersOnly={bangersOnly}
+              era={era}
             />
           </section>
         )}
