@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { SetlistContext } from "../App";
 
 export default function NumSetsFilter(props) {
-  const [checked, setChecked] = React.useState(false);
-  const handleChange = (event) => {
-    props.changeFunction(event.target.value);
-  };
+  const [checked, setChecked] = useState(false);
 
   const numOfSets = [1, 2, 3];
 
@@ -22,7 +20,11 @@ export default function NumSetsFilter(props) {
             id={num}
             key={num}
             value={num}
-            onClick={handleChange}
+            onClick={(e) =>
+              dispatch({
+                type: "NUM_SETS_CHANGED",
+                payload: e.target.value,
+              })}
           />
         </label>
       ))}

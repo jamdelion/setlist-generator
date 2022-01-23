@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer, createContext } from "react";
 import logo from "./logo.svg";
 import SpankyLogo from "./spankys.png";
 import "./App.css";
@@ -10,47 +10,72 @@ import SetList from "./components/SetList";
 import VibeFilter from "./components/VibeFilter";
 import EraFilter from "./components/EraFilter";
 
-function App() {
-  const [numSets, setNumSets] = React.useState(2);
-  const [gigLength, setGigLength] = React.useState(60);
-  const [vibe, setVibe] = React.useState("Chilled");
-  const [famFriendly, setFamFriendly] = React.useState(3); // out of 5
-  const [bangersOnly, setBangersOnly] = React.useState(1); // out of 5
-  const [generated, setGenerated] = React.useState(false);
-  const [era, setEra] = React.useState('90s');
+const initialState = {
+  gigLength: 60,
+  numSets: 2,
+  vibe: "Chilled",
+  famFriendly: 3, // out of 5
+  bangersOnly: 1,
+  setlistGenerated: false,
+  era: "90s",
+};
 
-  console.log(numSets, gigLength, vibe, famFriendly, bangersOnly, era);
+function setlistReducer(state, action) {
+  switch (action.type) {
+    case "GIG_LENGTH_CHANGED":
+      return { ...state, gigLength: action.payload };
+    case "NUM_SETS_CHANGED":
+      return { ...state, numSets: action.payload };
+    case "VIBE_CHANGED":
+      return { ...state, vibe: action.payload };
+    case "FAM_FRIENDLY_CHANGED":
+      return { ...state, famFriendly: action.payload };
+    case "BANGERS_ONLY_CHANGED":
+      return { ...state, bangersOnly: action.payload };
+    case "ERA_CHANGED":
+      return { ...state, era: action.payload };
+    case "SETLIST_GENERATED":
+      return { ...state, setlistGenerated: action.payload };
+    default:
+      return state;
+  }
+}
+
+export const SetlistContext = createContext();
+
+function App() {
+  const [state, dispatch] = useReducer(setlistReducer, initialState);
+
+  console.log("state", state);
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={SpankyLogo} className='App-logo' alt='logo' />
+    <div className="App">
+      <header className="App-header">
+        <img src={SpankyLogo} className="App-logo" alt="logo" />
         <p>Setlist Generator</p>
         <form>
-          <GigLengthFilter value={gigLength} changeFunction={setGigLength} />
-          <VibeFilter value={vibe} changeFunction={setVibe} />
-          <NumSetsFilter value={numSets} changeFunction={setNumSets} />
-          <FriendlySlider value={famFriendly} changeFunction={setFamFriendly} />
-          <KnownTunesFilter
-            value={bangersOnly}
-            changeFunction={setBangersOnly}
-          />
-          <EraFilter value={era} changeFunction={setEra} />
+          <SetlistContext.Provider value={{ state, dispatch }}>
+            <GigLengthFilter />
+            <VibeFilter />
+            <NumSetsFilter />
+            <FriendlySlider />
+            <KnownTunesFilter />
+            <EraFilter />
+          </SetlistContext.Provider>
         </form>
-        <button onClick={() => setGenerated(true)}>Generate Setlist </button>
+        <button
+          onClick={() => dispatch({ type: "SETLIST_GENERATED", payload: true })}
+        >
+          Generate Setlist{" "}
+        </button>
         {/* TODO: reset generated to false when another value changed */}
 
-        {generated && (
+        {state.setlistGenerated && (
           <section>
             <h2>Set List</h2>
-            <SetList
-              numSets={numSets}
-              gigLength={gigLength}
-              vibe={vibe}
-              famFriendly={famFriendly}
-              bangersOnly={bangersOnly}
-              era={era}
-            />
+            <SetlistContext.Provider value={{ state, dispatch }}>
+              <SetList />
+            </SetlistContext.Provider>
           </section>
         )}
       </header>

@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SetlistContext } from "../App";
 
 export default function KnownTunesFilter(props) {
+  const { state, dispatch } = useContext(SetlistContext);
   return (
     <fieldset>
       <legend>Bangers only?</legend>
       <p>1 is bangers only, 5 is rogue tunes welcome </p>
       <label htmlFor='known-tunes'>
-        {props.value}
+        {state.bangersOnly}
         <input
           type='range'
           id='known-tunes'
           min='1'
           max='5'
           step='1'
-          value={props.value}
-          onChange={(event) => props.changeFunction(event.target.value)}
+          value={state.bangersOnly}
+          onChange={(e) =>
+            dispatch({
+              type: "BANGERS_ONLY_CHANGED",
+              payload: e.target.value,
+            })}
         />
       </label>
     </fieldset>

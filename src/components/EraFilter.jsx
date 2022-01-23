@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SetlistContext } from "../App";
 
 export default function EraFilter(props) {
+  const { state, dispatch } = useContext(SetlistContext);
   return (
     <fieldset>
       <legend>Era</legend>
       <select
         name='era'
-        value={props.value}
-        onChange={(event) => props.changeFunction(event.target.value)}>
+        value={state.era}
+        onChange={(e) =>
+          dispatch({
+            type: "ERA_CHANGED",
+            payload: e.target.value,
+          })}>
         <option value='50s'>50s</option>
         <option value='60s'>60s</option>
-        <option value='70s' selected>
+        <option value='70s' defaultValue>
           70s
         </option>
         <option value='80s'>80s</option>
