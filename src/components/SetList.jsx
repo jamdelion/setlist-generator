@@ -3,7 +3,7 @@ import { SetlistContext } from "../App";
 import { songs } from "../songs";
 import { sampleSize } from "lodash";
 
-export default function SetList(props) {
+export default function SetList() {
   const { state, dispatch } = useContext(SetlistContext);
   // props: { numSets, gigLength, vibe, famFriendly, bangersOnly, era }
 
@@ -11,9 +11,9 @@ export default function SetList(props) {
   const AVG_MINS_PER_SONG = 3.5;
   let numSongs = Math.round(state.gigLength / AVG_MINS_PER_SONG); // doesn't yet handle "other";
 
+  let songList = Object.keys(songs); // this needs to be the probability weighted list
+  
   // random selection of songs
-  let songList = Object.keys(songs);
-
   function createSetlists(n) {
     var setlists = [];
     for (let i = 1; i <= n; i++) {

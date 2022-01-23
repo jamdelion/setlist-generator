@@ -84,3 +84,6 @@ function App() {
 }
 
 export default App;
+
+// A copy of songs with probability weightings. These weightings are adjusted by each filter. 
+// Then put the songs in an list with the higher weighted songs in the list multiple times, then random choice from there. Myabe have an "obligatory" flag which guarantees that those songs will be included (also feature - random setlist with song requests accommodated).
