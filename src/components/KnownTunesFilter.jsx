@@ -6,7 +6,7 @@ export default function KnownTunesFilter(props) {
   return (
     <fieldset>
       <legend>Bangers only?</legend>
-      <p>1 is bangers only, 5 is rogue tunes welcome </p>
+      <p>5 is bangers only, 1 is rogue tunes welcome </p>
       <label htmlFor='known-tunes'>
         {state.bangersOnly}
         <input
