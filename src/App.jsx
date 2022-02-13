@@ -18,6 +18,7 @@ const initialState = {
   bangersOnly: 1,
   setlistGenerated: false,
   era: "90s",
+  randomSetlist: false
 };
 
 function setlistReducer(state, action) {
@@ -36,6 +37,8 @@ function setlistReducer(state, action) {
       return { ...state, era: action.payload };
     case "SETLIST_GENERATED":
       return { ...state, setlistGenerated: action.payload };
+    case "RANDOM_SETLIST_WANTED":
+      return { ...state, randomSetlist: action.payload };
     default:
       return state;
   }
@@ -64,9 +67,20 @@ function App() {
           </SetlistContext.Provider>
         </form>
         <button
-          onClick={() => dispatch({ type: "SETLIST_GENERATED", payload: true })}
+          onClick={() => {
+            dispatch({ type: "RANDOM_SETLIST_WANTED", payload: false })
+            dispatch({ type: "SETLIST_GENERATED", payload: true })}
+          }
         >
-          Generate Setlist{" "}
+          Generate Setlist
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ type: "RANDOM_SETLIST_WANTED", payload: true })
+            dispatch({ type: "SETLIST_GENERATED", payload: true })}
+          }
+        >
+          Generate Random Setlist
         </button>
         {/* TODO: reset generated to false when another value changed */}
 
