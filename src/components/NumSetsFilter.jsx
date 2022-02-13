@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import { SetlistContext } from "../App";
 
 export default function NumSetsFilter(props) {
-  const [checked, setChecked] = useState(false);
+  const { state, dispatch } = useContext(SetlistContext);
+  const [checked, setChecked] = useState(true);
 
   const numOfSets = [1, 2, 3];
 

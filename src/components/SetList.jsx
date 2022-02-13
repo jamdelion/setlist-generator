@@ -47,8 +47,10 @@ export default function SetList() {
 
   function putSongsInSets(songs) {
     if (songs.length !== numSongs) return;
-    const songsPerSet = Math.ceil(songs.length / state.numSets);
-    return new Array(state.numSets).fill("").map((_, i) => {
+    console.log("numSets to put songs into", state.numSets)
+    const songsPerSet = Math.floor(songs.length / state.numSets);
+    console.log("songsPerSet", songsPerSet)
+    return new Array(parseInt(state.numSets)).fill("").map((_, i) => {
       return songs.slice(i * songsPerSet, (i+1) * songsPerSet) // returns an array of numSet arrays of song objects
     })
   }
@@ -62,6 +64,8 @@ export default function SetList() {
     let topSongs = getTopScoredSongs(numSongs);
     console.log("topSongs", topSongs)
     songsInSets = putSongsInSets(topSongs);
+    // debugger
+    console.log("songsInSets", songsInSets)
   }
 
   return (

@@ -14,14 +14,14 @@ export default function VibeFilter(props) {
             payload: e.target.value,
           })}
         name='vibe'>
-        <option value='religious'>Religious</option>
-        <option value='nerdy'>Nerdy</option>
-        <option value='chilled' defaultValue>
+        <option value='Religious'>Religious</option>
+        <option value='Nerdy'>Nerdy</option>
+        <option value='Chilled' defaultValue>
           Chilled
         </option>
-        <option value='wild'>Wild</option>
-        <option value='too posh'>Too posh to clap</option>
-        <option value='other'>Other</option>
+        <option value='Wild'>Wild</option>
+        <option value='Too posh'>Too posh to clap</option>
+        <option value='Other'>Other</option>
       </select>
     </fieldset>
   );

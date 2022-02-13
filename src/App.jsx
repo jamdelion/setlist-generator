@@ -11,10 +11,10 @@ import VibeFilter from "./components/VibeFilter";
 import EraFilter from "./components/EraFilter";
 
 const initialState = {
-  gigLength: 60,
-  numSets: 2,
+  gigLength: 90,
+  numSets: 3,
   vibe: "Chilled",
-  famFriendly: 3, // out of 5
+  famFriendly: 0, // -5, 0 or 5
   bangersOnly: 1,
   setlistGenerated: false,
   era: "1995",
