@@ -33,7 +33,7 @@ export default function SetList() {
 
   
   // random selection of songs
-  function createSetlists(n) {
+  function createRandomSetlists(numberOfSets) {
     var setlists = [];
     for (let i = 1; i <= n; i++) {
       let randomSongs = sampleSize(songNames, numSongs / state.numSets)
@@ -42,11 +42,11 @@ export default function SetList() {
     return setlists;
   }
 
-  let setlists = createSetlists(state.numSets);
+  let randomSetlists = createRandomSetlists(state.numSets);
 
   return (
     <div>
-      {setlists.map((x) => (
+      {randomSetlists.map((x) => (
         <>
           <h1>Set {x.set}</h1>
           <ol>{x.songs.map((song) => <li key={song}>{song}</li>)}</ol>
