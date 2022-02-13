@@ -11,13 +11,32 @@ export default function SetList() {
   const AVG_MINS_PER_SONG = 3.5;
   let numSongs = Math.round(state.gigLength / AVG_MINS_PER_SONG); // doesn't yet handle "other";
 
-  let songList = Object.keys(songs); // this needs to be the probability weighted list
+  let songNames = Object.keys(songs); // this needs to be the probability weighted list
+
+  let scoredSongs = {}
+  songNames.forEach((songName, index) => {
+    return scoredSongs[songName] = {
+      bangerScore: songs[songName].banger * state.bangersOnly,
+      // more scores here
+      totalScore: 0
+    }
+  })
+  console.log("scoredSongs", scoredSongs)
+
+  // calculate the total score for each song
+  songNames.forEach((song, index) => {
+    return scoredSongs[song].totalScore = scoredSongs[song].bangerScore + 0;
+  })
+
+  console.log("scoredSongs with total", scoredSongs)
+
+
   
   // random selection of songs
   function createSetlists(n) {
     var setlists = [];
     for (let i = 1; i <= n; i++) {
-      let randomSongs = sampleSize(songList, numSongs / state.numSets)
+      let randomSongs = sampleSize(songNames, numSongs / state.numSets)
       setlists.push({set: i, songs: randomSongs});
     }
     return setlists;
