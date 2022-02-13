@@ -7,11 +7,9 @@ const BANGER_LEVEL = {
 }
 
 const DIRTY_LEVEL = {
-  topBanger: 1,
-  decentBanger: 0.8,
-  solidChoice: 0.6,
-  bitRogue: 0.4,
-  obscure: 0.2
+  filthy: -1,
+  questionable: 0.2,
+  wholesome: 1,
 }
 
 export const songs = {
@@ -22,7 +20,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Sell Out": {
     length: 3,
@@ -31,7 +29,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Video Killed The Radio Star": {
     length: 3,
@@ -40,7 +38,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Move Your Feet": {
     length: 3,
@@ -49,7 +47,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "I Want You Back": {
     length: 3,
@@ -58,7 +56,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Toxic: {
     length: 3,
@@ -67,7 +65,7 @@ export const songs = {
     banger: BANGER_LEVEL.topbanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Livin' La Vida Loca": {
     length: 3,
@@ -76,7 +74,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "AP Touro": {
     length: 3,
@@ -85,7 +83,7 @@ export const songs = {
     banger: BANGER_LEVEL.obscure,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Tears Dry On Their Own": {
     length: 3,
@@ -94,7 +92,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Pencil Full Of Lead": {
     length: 3,
@@ -103,7 +101,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Don't You Want Me": {
     length: 3,
@@ -112,7 +110,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "It Must Be Love": {
     length: 3,
@@ -121,7 +119,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Sweet Dreams Are Made Of This": {
     length: 3,
@@ -130,7 +128,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Grease: {
     length: 3,
@@ -139,7 +137,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Smooth: {
     length: 3,
@@ -148,7 +146,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Ain't Got No – I Got Life": {
     length: 3,
@@ -157,7 +155,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Blame It On The Boogie": {
     length: 3,
@@ -166,7 +164,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Gibbous: {
     length: 3,
@@ -175,7 +173,7 @@ export const songs = {
     banger: BANGER_LEVEL.obscure,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Hello: {
     length: 3,
@@ -184,7 +182,7 @@ export const songs = {
     banger: BANGER_LEVEL.obscure,
     wellknown: false,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "I Feel Good": {
     length: 3,
@@ -193,7 +191,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Walking On Sunshine": {
     length: 3,
@@ -202,7 +200,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Brown Eyed Girl": {
     length: 3,
@@ -211,7 +209,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Crazy In Love": {
     length: 3,
@@ -220,7 +218,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Ten Out Of Ten": {
     length: 3,
@@ -229,7 +227,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "You Can Call Me Al": {
     length: 3,
@@ -238,7 +236,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Build Me Up Buttercup": {
     length: 3,
@@ -247,7 +245,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Can't Get You Out Of My Head": {
     length: 3,
@@ -256,7 +254,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Thrift Shop": {
     length: 3,
@@ -265,7 +263,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Can't Take My Eyes Off You": {
     length: 3,
@@ -274,7 +272,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Higher and Higher": {
     length: 3,
@@ -283,7 +281,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "She Has A Girlfriend Now": {
     length: 3,
@@ -292,7 +290,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Man I Feel Like A Woman": {
     length: 3,
@@ -301,7 +299,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "You Are The Best Thing": {
     length: 3,
@@ -310,7 +308,7 @@ export const songs = {
     banger: BANGER_LEVEL.obscure,
     wellknown: false,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "I'm Coming Out": {
     length: 3,
@@ -319,7 +317,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2006,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Sax: {
     length: 3,
@@ -328,7 +326,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: false,
     year: 2006,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Forget You": {
     length: 3,
@@ -337,7 +335,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2010,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "My Type": {
     length: 3,
@@ -346,7 +344,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2014,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Twist and Shout": {
     length: 3,
@@ -355,7 +353,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 1964,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Shut Up and Dance": {
     length: 3,
@@ -364,7 +362,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2014,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Take On Me": {
     length: 3,
@@ -373,7 +371,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1984,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Livin on a Prayer": {
     length: 3,
@@ -382,7 +380,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1986,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Mr Brightside": {
     length: 3,
@@ -391,7 +389,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2003,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Love Never Felt So Good": {
     length: 3,
@@ -400,7 +398,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2014,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Come On Eileen": {
     length: 3,
@@ -409,7 +407,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1982,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Redbone: {
     length: 3,
@@ -418,7 +416,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2016,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Stacy's Mom": {
     length: 3,
@@ -427,7 +425,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2003,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   Treasure: {
     length: 3,
@@ -436,7 +434,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2013,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Lean On": {
     length: 3,
@@ -445,7 +443,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2015,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Son Of A Preacher Man": {
     length: 3,
@@ -454,7 +452,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: true,
     year: 1968,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Cake by the Ocean": {
     length: 3,
@@ -463,7 +461,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2015,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Escape (Pina Colada Song)": {
     length: 3,
@@ -472,7 +470,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 1979,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "We Built This City": {
     length: 3,
@@ -481,7 +479,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 1985,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Titanium: {
     length: 3,
@@ -490,7 +488,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2011,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "9 to 5": {
     length: 3,
@@ -499,7 +497,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1980,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Bad Guy": {
     length: 3,
@@ -508,7 +506,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2019,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Fuck You (Lily Allen)": {
     length: 3,
@@ -517,7 +515,7 @@ export const songs = {
     banger: BANGER_LEVEL.bitRogue,
     wellknown: false,
     year: 2009,
-    dirty: true,
+    dirty: DIRTY_LEVEL.filthy,
   },
   "Mr Blue Sky": {
     length: 3,
@@ -526,7 +524,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 1978,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Oh What A Night": {
     length: 3,
@@ -535,7 +533,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 1975,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Ride: {
     length: 3,
@@ -544,7 +542,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: false,
     year: 2015,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Tu Vuo Fa l'Americano": {
     length: 3,
@@ -553,7 +551,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2010,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "This Girl": {
     length: 3,
@@ -562,7 +560,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2009,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Take Me Out": {
     length: 3,
@@ -571,7 +569,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2004,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Rude: {
     length: 3,
@@ -580,7 +578,7 @@ export const songs = {
     banger: BANGER_LEVEL.solidChoice,
     wellknown: true,
     year: 2013,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Five Colours In Her Hair": {
     length: 3,
@@ -589,7 +587,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2004,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Think About Things": {
     length: 3,
@@ -598,7 +596,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2020,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Blinding Lights": {
     length: 3,
@@ -607,7 +605,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2019,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   Closer: {
     length: 3,
@@ -616,7 +614,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2016,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Take You Dancing": {
     length: 3,
@@ -625,7 +623,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2020,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "Don't Start Now": {
     length: 3,
@@ -634,7 +632,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2019,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "Gimme Gimme Gimme": {
     length: 3,
@@ -643,7 +641,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1979,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "All I Want For Christmas Is You": {
     length: 3,
@@ -652,7 +650,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 1994,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
   "It's Raining Men": {
     length: 3,
@@ -661,7 +659,7 @@ export const songs = {
     banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 1982,
-    dirty: false,
+    dirty: DIRTY_LEVEL.questionable,
   },
   "I Will Survive": {
     length: 3,
@@ -670,7 +668,7 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 1978,
-    dirty: false,
+    dirty: DIRTY_LEVEL.wholesome,
   },
 };
 

@@ -11,13 +11,20 @@ export default function SetList() {
   const AVG_MINS_PER_SONG = 3.5;
   let numSongs = Math.round(state.gigLength / AVG_MINS_PER_SONG); // doesn't yet handle "other";
 
-  let songNames = Object.keys(songs); // this needs to be the probability weighted list
+  let songNames = Object.keys(songs); 
+
+  function filterByEra(songYear, midOfEra) {
+    if (Math.abs(parseInt(midOfEra)-songYear) <= 5) return 1;
+    else return 0;
+  }
 
   let scoredSongs = [];
   songNames.map(songName => {
     scoredSongs.push({
       name: songName,
       bangerScore: songs[songName].banger * state.bangersOnly,
+      filthyScore: songs[songName].dirty * state.famFriendly,
+      eraScore: filterByEra(songs[songName].year, state.era),
       // more scores here
       totalScore: 0
     }
@@ -25,33 +32,8 @@ export default function SetList() {
 
   // calculate the total score for each song
   scoredSongs.map(song => {
-    return song.totalScore = song.bangerScore + 0;
+    return song.totalScore = song.bangerScore + song.filthyScore + song.eraScore;
   })
-
-
-  // random selection of songs
-  // function createRandomSetlists(numberOfSets) {
-  //   var setlists = [];
-  //   for (let i = 1; i <= numberOfSets; i++) {
-  //     let randomSongs = sampleSize(songNames, numSongs / state.numSets)
-  //     setlists.push({set: i, songs: randomSongs});
-  //   }
-  //   return setlists;
-  // }
-
-  // let randomSetlists = createRandomSetlists(state.numSets);
-
-  // function getTopScoredSongs(numberOfSets) {
-  //   let orderedSongs = scoredSongs.slice();
-  //   orderedSongs.sort((a,b)=> b.totalScore - a.totalScore);
-  //   // console.log("top 10 songs", orderedSongs.slice(0,9)
-  //   var setlists = [];
-  //   for (let i = 1; i <= numberOfSets; i++) {
-  //     let songsForSetlist = orderedSongs.slice(0, numSongs / state.numSets)
-  //     setlists.push({set: i, key: i, songs: songsForSetlist});
-  //   }
-  //   return setlists;
-  // }
 
   function getRandomSongs(numberOfSongs) {
     return sampleSize(scoredSongs, numberOfSongs)
@@ -78,22 +60,9 @@ export default function SetList() {
     songsInSets = putSongsInSets(songs);
   } else {
     let topSongs = getTopScoredSongs(numSongs);
+    console.log("topSongs", topSongs)
     songsInSets = putSongsInSets(topSongs);
   }
-
-
-  //   let songsWithSetNumber = {};
-  //   for (let i = 1; i <= state.numSets; i++) {
-
-  //     //     let songsForSetlist = orderedSongs.slice(0, numSongs / state.numSets)
-  //     //     setlists.push({set: i, key: i, songs: songsForSetlist});
-  //     //   }
-  //   songs.map(song => {
-  //     return {...song, }
-  //   })
-
-
-  // }
 
   return (
     <div>

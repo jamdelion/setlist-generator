@@ -17,7 +17,7 @@ const initialState = {
   famFriendly: 3, // out of 5
   bangersOnly: 1,
   setlistGenerated: false,
-  era: "90s",
+  era: "1995",
   randomSetlist: false
 };
 
@@ -49,7 +49,7 @@ export const SetlistContext = createContext();
 function App() {
   const [state, dispatch] = useReducer(setlistReducer, initialState);
 
-  console.log("state", state);
+  // console.log("state", state);
 
   return (
     <div className="App">
