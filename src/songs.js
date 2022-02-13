@@ -670,6 +670,33 @@ export const songs = {
     year: 1978,
     dirty: DIRTY_LEVEL.wholesome,
   },
+  "Back To Black": {
+    length: 3,
+    vocals: true,
+    quiet: true,
+    banger: BANGER_LEVEL.solidChoice,
+    wellknown: true,
+    year: 2007,
+    dirty: DIRTY_LEVEL.questionable,
+  },
+  Tragedy: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 1978,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  Vengabus: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.topBanger,
+    wellknown: true,
+    year: 1998,
+    dirty: DIRTY_LEVEL.questionable,
+  },
 };
 
 // export const total_num_songs = Object.keys(songs).length;
