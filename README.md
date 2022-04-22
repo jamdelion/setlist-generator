@@ -9,6 +9,11 @@ A tool to generate setlists for my band, [Colonel Spanky's Love Ensemble](https:
 - [ ] make default radio button be number of sets: 1
 - [ ] make genre filters work (fam friendly etc)
 
+### Ideas:
+
+- [ ] print setlist button
+- [ ] drag songs to reorder setlist
+- [ ] summary/count at bottom of approx how long setlist is/how many songs 
 ### Created with:
 
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" />  
