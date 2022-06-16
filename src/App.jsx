@@ -1,6 +1,5 @@
 import React, { useState, useReducer, createContext } from "react";
-import logo from "./logo.svg";
-import SpankyLogo from "./spankys.png";
+import SpankyLogo from "./spanky_transparent.png";
 import "./App.css";
 import GigLengthFilter from "./components/GigLengthFilter";
 import NumSetsFilter from "./components/NumSetsFilter";
@@ -18,7 +17,7 @@ const initialState = {
   bangersOnly: 1,
   setlistGenerated: false,
   era: "1995",
-  randomSetlist: false
+  randomSetlist: false,
 };
 
 function setlistReducer(state, action) {
@@ -53,45 +52,55 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-container">
         <img src={SpankyLogo} className="App-logo" alt="logo" />
-        <p>Setlist Generator</p>
-        <form>
-          <SetlistContext.Provider value={{ state, dispatch }}>
-            <GigLengthFilter />
-            <VibeFilter />
-            <NumSetsFilter />
-            <FriendlySlider />
-            <KnownTunesFilter />
-            <EraFilter />
-          </SetlistContext.Provider>
-        </form>
-        <button
-          onClick={() => {
-            dispatch({ type: "RANDOM_SETLIST_WANTED", payload: false })
-            dispatch({ type: "SETLIST_GENERATED", payload: true })}
-          }
-        >
-          Generate Setlist
-        </button>
-        <button
-          onClick={() => {
-            dispatch({ type: "RANDOM_SETLIST_WANTED", payload: true })
-            dispatch({ type: "SETLIST_GENERATED", payload: true })}
-          }
-        >
-          Generate Random Setlist
-        </button>
-        {/* TODO: reset generated to false when another value changed */}
-
-        {state.setlistGenerated && (
+        <h1>Setlist Generator</h1>
+        {state.setlistGenerated ? (
           <section>
             <h2>Set List</h2>
             <SetlistContext.Provider value={{ state, dispatch }}>
               <SetList />
             </SetlistContext.Provider>
+            <button
+              onClick={() => {
+                // show form again
+                dispatch({ type: "SETLIST_GENERATED", payload: false });
+              }}
+            >
+              Return to form
+            </button>
           </section>
+        ) : (
+          <>
+            <form className="App-form">
+              <SetlistContext.Provider value={{ state, dispatch }}>
+                <GigLengthFilter />
+                <VibeFilter />
+                <NumSetsFilter />
+                <FriendlySlider />
+                <KnownTunesFilter />
+                <EraFilter />
+              </SetlistContext.Provider>
+            </form>
+            <button
+              onClick={() => {
+                dispatch({ type: "RANDOM_SETLIST_WANTED", payload: false });
+                dispatch({ type: "SETLIST_GENERATED", payload: true });
+              }}
+            >
+              Generate Setlist
+            </button>
+          </>
         )}
+
+        <button
+          onClick={() => {
+            dispatch({ type: "RANDOM_SETLIST_WANTED", payload: true });
+            dispatch({ type: "SETLIST_GENERATED", payload: true });
+          }}
+        >
+          Generate Random Setlist
+        </button>
       </header>
     </div>
   );
@@ -99,7 +108,7 @@ function App() {
 
 export default App;
 
-// A copy of songs with probability weightings. These weightings are adjusted by each filter. 
+// A copy of songs with probability weightings. These weightings are adjusted by each filter.
 // Then put the songs in an list with the higher weighted songs in the list multiple times, then random choice from there. Myabe have an "obligatory" flag which guarantees that those songs will be included (also feature - random setlist with song requests accommodated).
 
 //  each filter has a number on a scale for each option, each song has a score for each factor too, and they are multiplied together, added to the song's "total score", and then the top whatever of these songs are put in the setlist
