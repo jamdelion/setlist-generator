@@ -27,8 +27,8 @@ export default function SetList() {
       eraScore: filterByEra(songs[songName].year, state.era),
       // more scores here
       totalScore: 0
-    }
-  )})
+    })
+  })
 
   // calculate the total score for each song
   scoredSongs.map(song => {
@@ -47,9 +47,7 @@ export default function SetList() {
 
   function putSongsInSets(songs) {
     if (songs.length !== numSongs) return;
-    console.log("numSets to put songs into", state.numSets)
     const songsPerSet = Math.floor(songs.length / state.numSets);
-    console.log("songsPerSet", songsPerSet)
     return new Array(parseInt(state.numSets)).fill("").map((_, i) => {
       return songs.slice(i * songsPerSet, (i+1) * songsPerSet) // returns an array of numSet arrays of song objects
     })
@@ -62,15 +60,12 @@ export default function SetList() {
     songsInSets = putSongsInSets(songs);
   } else {
     let topSongs = getTopScoredSongs(numSongs);
-    console.log("topSongs", topSongs)
     songsInSets = putSongsInSets(topSongs);
-    // debugger
-    console.log("songsInSets", songsInSets)
+
   }
 
   return (
     <div>
-      {/* {randomSetlists.map((x) => ( */}
         {songsInSets.map((set, index) => (
         <>
           <h1>Set {index + 1}</h1>

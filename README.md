@@ -4,10 +4,10 @@ A tool to generate setlists for my band, [Colonel Spanky's Love Ensemble](https:
 
 ### To Do:
 
-- [ ] remove duplicates from multiple sets
 - [ ] deal with "other" (add input field)
 - [ ] make default radio button be number of sets: 1
-- [ ] make genre filters work (fam friendly etc)
+- [ ] be able to make setlist in the optimal order (including tracks with no vocals, quiet songs, start and end with a banger etc)
+- [ ] use "song length" to adjust num of songs in set if includes short songs 
 
 ### Ideas:
 
