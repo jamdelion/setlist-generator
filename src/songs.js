@@ -62,7 +62,7 @@ export const songs = {
     length: 3,
     vocals: true,
     quiet: false,
-    banger: BANGER_LEVEL.topbanger,
+    banger: BANGER_LEVEL.topBanger,
     wellknown: true,
     year: 2006,
     dirty: DIRTY_LEVEL.questionable,
