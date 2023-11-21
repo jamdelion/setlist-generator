@@ -18,6 +18,8 @@ const initialState = {
   setlistGenerated: false,
   era: "1995",
   randomSetlist: false,
+  songListInSets: [],
+  flattenedSongList: []
 };
 
 function setlistReducer(state, action) {
@@ -39,6 +41,10 @@ function setlistReducer(state, action) {
       return { ...state, setlistGenerated: action.payload };
     case "RANDOM_SETLIST_WANTED":
       return { ...state, randomSetlist: action.payload };
+    case "SETLIST_DETERMINED":
+      return { ...state, songListInSets: [...state.songListInSets, action.payload] };
+    case "FLAT_SETLIST_DETERMINED":
+      return { ...state, flattenedSongList: [...state.flattenedSongList,action.payload] };
     default:
       return state;
   }
