@@ -1,13 +1,13 @@
-import React, { useState, useReducer, createContext } from "react";
-import SpankyLogo from "./spanky_transparent.png";
+import React, { createContext, useReducer } from "react";
 import "./App.css";
-import GigLengthFilter from "./components/GigLengthFilter";
-import NumSetsFilter from "./components/NumSetsFilter";
-import FriendlySlider from "./components/FriendlySlider";
-import KnownTunesFilter from "./components/KnownTunesFilter";
-import SetList from "./components/SetList";
-import VibeFilter from "./components/VibeFilter";
 import EraFilter from "./components/EraFilter";
+import FriendlySlider from "./components/FriendlySlider";
+import GigLengthFilter from "./components/GigLengthFilter";
+import KnownTunesFilter from "./components/KnownTunesFilter";
+import NumSetsFilter from "./components/NumSetsFilter";
+import SetList from "./components/Setlist/SetList";
+import VibeFilter from "./components/VibeFilter";
+import SpankyLogo from "./spanky_transparent.png";
 
 const initialState = {
   gigLength: 90,
@@ -30,6 +30,7 @@ function setlistReducer(state, action) {
       return { ...state, vibe: action.payload };
     case "FAM_FRIENDLY_CHANGED":
       return { ...state, famFriendly: action.payload };
+
     case "BANGERS_ONLY_CHANGED":
       return { ...state, bangersOnly: action.payload };
     case "ERA_CHANGED":
