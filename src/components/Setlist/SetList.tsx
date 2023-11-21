@@ -6,6 +6,7 @@ import {
   getTopScoredSongs,
 } from "./helpers/getTopScoredSongs";
 import { putSongsInSets } from "./helpers/putSongsInSets";
+import { Song } from "./types/Song";
 
 const AVG_MINS_PER_SONG = 3.5;
 
@@ -14,23 +15,23 @@ export default function SetList() {
   // props: { numSets, gigLength, vibe, famFriendly, bangersOnly, era }
 
   // sort out number of songs in set
-  let numSongs = Math.round(state.gigLength / AVG_MINS_PER_SONG); // doesn't yet handle "other";
+  const numSongs = Math.round(state.gigLength / AVG_MINS_PER_SONG); // doesn't yet handle "other";
 
-  const scoredSongs = constructScoredSongs(state);
+  const scoredSongs: Song[] = constructScoredSongs(state);
   // calculate the total score for each song
   scoredSongs.map((song) => {
     return (song.totalScore =
       song.bangerScore + song.filthyScore + song.eraScore);
   });
 
-  let songsInSets = [];
+  let songsInSets: Song[][] = [];
 
   if (state.randomSetlist) {
-    let songs = getRandomSongs(numSongs, scoredSongs);
-    songsInSets = putSongsInSets(songs);
+    const songs = getRandomSongs(numSongs, scoredSongs);
+    songsInSets = putSongsInSets(songs, numSongs, state.numSets);
   } else {
-    let topSongs = getTopScoredSongs(numSongs);
-    songsInSets = putSongsInSets(topSongs);
+    const topSongs = getTopScoredSongs(numSongs);
+    songsInSets = putSongsInSets(topSongs, numSongs, state.numSets);
   }
 
   return (

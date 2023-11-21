@@ -1,5 +1,5 @@
-import { sampleSize } from 'lodash';
+import { sampleSize } from "lodash";
 
 export const getRandomSongs = (numberOfSongs, scoredSongs) => {
-	return sampleSize(scoredSongs, numberOfSongs);
+  return sampleSize(scoredSongs, numberOfSongs);
 };

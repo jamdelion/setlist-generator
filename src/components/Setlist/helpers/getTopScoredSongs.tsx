@@ -1,9 +1,10 @@
 import { songs } from "../../../songs";
 import { filterByEra } from "./filterByEra";
+import { Song } from "../types/Song";
 
-let scoredSongs = [];
+const scoredSongs: Song[] = [];
 export const constructScoredSongs = (state) => {
-  let songNames = Object.keys(songs);
+  const songNames = Object.keys(songs);
 
   songNames.map((songName) => {
     scoredSongs.push({
@@ -15,10 +16,11 @@ export const constructScoredSongs = (state) => {
       totalScore: 0,
     });
   });
+  return scoredSongs;
 };
 
 export const getTopScoredSongs = (numberOfSongs) => {
-  let orderedSongs = scoredSongs.slice();
+  const orderedSongs: Song[] = scoredSongs.slice();
   orderedSongs.sort((a, b) => b.totalScore - a.totalScore);
   return orderedSongs.slice(0, numberOfSongs); // array of song objects, ordered from highest totalScore
 };
