@@ -3,14 +3,14 @@ const BANGER_LEVEL = {
   decentBanger: 0.8,
   solidChoice: 0.6,
   bitRogue: 0.4,
-  obscure: 0.2
-}
+  obscure: 0.2,
+};
 
 const DIRTY_LEVEL = {
   filthy: -1,
   questionable: 0.2,
   wholesome: 1,
-}
+};
 
 export const songs = {
   "Put You Records On": {
@@ -769,7 +769,7 @@ export const songs = {
     year: 1987,
     dirty: DIRTY_LEVEL.wholesome,
   },
-  "Shregamix": {
+  Shregamix: {
     length: 7,
     vocals: true,
     quiet: false,
@@ -821,6 +821,96 @@ export const songs = {
     banger: BANGER_LEVEL.decentBanger,
     wellknown: true,
     year: 2018,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  XS: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.solidChoice,
+    wellknown: false,
+    year: 2020,
+    dirty: DIRTY_LEVEL.questionable,
+  },
+  Arthur: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2000,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  "Killing Me Softly": {
+    length: 3,
+    vocals: false,
+    quiet: false,
+    banger: BANGER_LEVEL.solidChoice,
+    wellknown: true,
+    year: 1973,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  Barbie: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.topBanger,
+    wellknown: true,
+    year: 1997,
+    dirty: DIRTY_LEVEL.questionable,
+  },
+  Kiss: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 1986,
+    dirty: DIRTY_LEVEL.questionable,
+  },
+  "Sreep & Mreep": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2010,
+    dirty: DIRTY_LEVEL.filthy,
+  },
+  "Tiggle Diggle Tiggle Miggle": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2013,
+    dirty: DIRTY_LEVEL.filthy,
+  },
+  "Tracy Beaker's Dilemma": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2002,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  "Everlasting Love": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 1975,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  "Murder on the Dancefloor": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2001,
     dirty: DIRTY_LEVEL.wholesome,
   },
 };
