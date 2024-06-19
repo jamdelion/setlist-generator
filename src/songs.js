@@ -913,6 +913,42 @@ export const songs = {
     year: 2001,
     dirty: DIRTY_LEVEL.wholesome,
   },
+  "Can't Stop Feeling Billie Jean's Face": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2016,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  Foundations: {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.decentBanger,
+    wellknown: true,
+    year: 2007,
+    dirty: DIRTY_LEVEL.questionable,
+  },
+  "Eight Days A Week": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.solidChoice,
+    wellknown: true,
+    year: 1964,
+    dirty: DIRTY_LEVEL.wholesome,
+  },
+  "Vroom Vroom": {
+    length: 3,
+    vocals: true,
+    quiet: false,
+    banger: BANGER_LEVEL.solidChoice,
+    wellknown: true,
+    year: 2016,
+    dirty: DIRTY_LEVEL.questionable,
+  },
 };
 
 // export const total_num_songs = Object.keys(songs).length;
